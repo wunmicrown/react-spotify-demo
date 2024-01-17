@@ -49,9 +49,10 @@ const Login = () => {
       </h2>
         <h1>
         {allUsers.map((user, index) => (
-          <div key={index}>
+          <tr key={index}>
+            <td>{index+1}</td>
             {user.firstName} {user.lastName} {user.email} {user.password}
-          </div>
+          </tr>
         ))}
         </h1>
 
