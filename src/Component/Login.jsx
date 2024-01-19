@@ -38,7 +38,7 @@ const Login = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <h2 className="text-2xl font-semibold mb-4">{name}</h2>
+      {/* <h2 className="text-2xl font-semibold mb-4">{name}</h2> */}
       
       <table className="table-auto w-full mb-8">
         <thead>
@@ -79,7 +79,7 @@ const Login = () => {
           className="border px-4 py-2 w-1/4"
         />
         <input
-          type="text"
+          type="email"
           onChange={user2}
           placeholder="Email"
           value={email}
