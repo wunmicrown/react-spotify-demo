@@ -38,7 +38,7 @@ const Login = () => {
 
   return (
     <div className="container mx-auto p-4">
-      {/* <h2 className="text-2xl font-semibold mb-4">{name}</h2> */}
+      <h2 className="text-2xl font-semibold mb-4">{name}</h2>
       
       <table className="table-auto w-full mb-8">
         <thead>
@@ -63,7 +63,7 @@ const Login = () => {
         </tbody>
       </table>
 
-      <div className="flex space-x-2 mb-4">
+      <div className="space-x-2 mb-4">
         <input
           type="text"
           onChange={user}
@@ -79,7 +79,7 @@ const Login = () => {
           className="border px-4 py-2 w-1/4"
         />
         <input
-          type="email"
+          type="text"
           onChange={user2}
           placeholder="Email"
           value={email}

@@ -1,6 +1,5 @@
 import React from 'react'
-import Login from './Component/Login'
-
+import Login from './Component/Login';
 const App = () => {
   return (
     <>
