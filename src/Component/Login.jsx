@@ -69,28 +69,28 @@ const Login = () => {
           onChange={user}
           placeholder="First Name"
           value={firstName}
-          className="border px-4 py-2 w-1/4"
+          className="border px-4 py-2"
         />
         <input
           type="text"
           onChange={user1}
           placeholder="Last Name"
           value={lastName}
-          className="border px-4 py-2 w-1/4"
+          className="border px-4 py-2"
         />
         <input
           type="text"
           onChange={user2}
           placeholder="Email"
           value={email}
-          className="border px-4 py-2 w-1/4"
+          className="border px-4 py-2"
         />
         <input
           type="text"
           onChange={user3}
           placeholder="Password"
           value={password}
-          className="border px-4 py-2 w-1/4"
+          className="border px-4 py-2"
         />
         <button
           onClick={changeName}
