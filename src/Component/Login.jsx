@@ -25,8 +25,8 @@ const Login = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
-      <table className="table-auto w-full mb-8">
+    <div className="container mx-auto p-4 ">
+      <table className="table-auto w-full mb-8 bg-red-600 h-auto overflow-auto">
         <thead>
           <tr>
             <th className="px-4 py-2">ID</th>
@@ -53,20 +53,20 @@ const Login = () => {
         </div>
         <div id="input-area">
           <div class="form-inp">
-            <input type="text"
+            <input type="email"
           onChange={user2}
           placeholder="Email"
           value={email}/>
           </div>
           <div class="form-inp">
-            <input type="text"
+            <input type="password"
           onChange={user3}
           placeholder="Password"
           value={password}/>
           </div>
         </div>
         <div id="submit-button-cvr">
-          <button id="submit-button"  onClick={changeName}>Login</button>
+          <button id="submit-button" type='submit'  onClick={changeName}>Login</button>
         </div>
         <div id="forgot-pass">
           <a href="#">Forgot password?</a>
