@@ -1,11 +1,11 @@
 import React from 'react'
 import Login from './Component/Login';
-import Sportify from './Component/Sportify';
+import Music from './Component/Music';
 const App = () => {
   return (
     <>
       {/* <Login/> */}
-      <Sportify/>
+      <Music/>
     </>
   )
 }
