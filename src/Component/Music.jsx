@@ -63,32 +63,47 @@ const Sportify = () => {
 
   return (
     <main>
-      <h1>Sportify</h1>
 
-      {playlistInfo && (
-        <div>
-          <h2>Playlist Information:</h2>
-          <p>Title: {playlistInfo.name}</p>
-          <p>Owner: {playlistInfo.owner.display_name}</p>
-          <p>Total Tracks: {playlistInfo.tracks.total}</p>
+<h1 className="text-2xl font-bold mb-4">Sportify</h1>
 
-          <h3>Tracks:</h3>
-          {playlistInfo.tracks.items.map((track, i) => (
-            <div key={i}>
-              <p>Title: {track.track.name}</p>
-              <p>Artist(s): {track.track.artists.map(artist => artist.name).join(', ')}</p>
-              <p>Album: {track.track.album.name}</p>
-              <p>Duration: {track.track.duration_ms} ms</p>
-              {track.track.preview_url && (
-                <button className=" bg-green-700 text-white p-1 rounded" onClick={() => playAudio(track.track.preview_url)}>Play Preview</button>
-              )}
-            </div>
-          ))}
+{playlistInfo && (
+  <div>
+    <h2 className="text-xl font-bold mb-2">Playlist Information:</h2>
+    <p>Title: {playlistInfo.name}</p>
+    <p>Owner: {playlistInfo.owner.display_name}</p>
+    <p>Total Tracks: {playlistInfo.tracks.total}</p>
 
-          {/* Single audio element for all tracks */}
-          <audio controls ref={(audio) => { setCurrentAudio(audio); }}></audio>
+    <h3 className="text-xl font-bold mt-4 mb-2">Tracks:</h3>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+      {playlistInfo.tracks.items.map((track, i) => (
+        <div key={i} className="bg-white p-4 rounded shadow-md transition duration-300 transform hover:scale-105 hover:bg-slate-300">
+          <img
+            src={track.track.album.images[0].url}
+            alt={track.track.album.name}
+            className="w-full h-32 object-cover mb-4 rounded"
+          />
+          <p className="text-lg font-semibold">{track.track.name}</p>
+          <p className="text-sm text-gray-600">
+            {track.track.artists.map((artist) => artist.name).join(', ')}
+          </p>
+          <p className="text-sm text-gray-600">Album: {track.track.album.name}</p>
+          <p className="text-sm text-gray-600">Duration: {track.track.duration_ms} ms</p>
+          {track.track.preview_url && (
+            <button
+              className="bg-green-700 text-white p-2 rounded mt-2"
+              onClick={() => playAudio(track.track.preview_url)}
+            >
+              Play Preview
+            </button>
+          )}
         </div>
-      )}
+      ))}
+    </div>
+
+    {/* Single audio element for all tracks */}
+    <audio controls ref={(audio) => setCurrentAudio(audio)}></audio>
+  </div>
+)}
     </main>
   );
 };
