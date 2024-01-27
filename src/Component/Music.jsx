@@ -5,7 +5,7 @@ import searchIcon from '../assets/image-folder/search-icon.png';
 import library from '../assets/image-folder/libary-icon.png';
 import next from '../assets/image-folder/next-icon.png';
 import back from '../assets/image-folder/back-icon.png';
-import notification from '../assets/image-folder/nofication-icon.png';
+import notification from '../assets/image-folder/notification-icon.png';
 import gmail from '../assets/image-folder/gmail-icon.png';
 
 
