@@ -104,11 +104,11 @@ const Sportify = () => {
                 <img src={next} alt="" />
                 <img src={back} alt="" />
                 </div>
-                <div className="flex gap-10 mx-">
+                <div className="flex gap-10 mx-4">
                 <button className="text-black font-bold transition duration-300 transform hover:scale-110 hover:bg-[#e3dede] bg-white rounded-2xl mt-3 mb-3 p-4">Explore Premium</button>
                 <button className="text-white font-bold transition duration-300 transform hover:scale-110  bg-[#0F0F0F] rounded-2xl mt-3 mb-3 p-3">Install App</button>
-                <img className="" src={notification} alt="" />
-                <img src={gmail} alt="" />
+                <img className=" w-20 cursor-pointer" src={notification} alt="" />
+                <img className=" w-16 cursor-pointer" src={gmail} alt="" />
                 </div>
               </nav>
 
