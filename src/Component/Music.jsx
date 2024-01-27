@@ -6,7 +6,7 @@ const Sportify = () => {
   const endPoint = "https://accounts.spotify.com/api/token";
   const clientId = "baa903f4c65b411e9bb91c10263b1110";
   const clientSecret = "9cf614bb1332457ca8cae720ad387b11";
-  const playlistId = "37i9dQZF1EIUQpJ2F6wHN3"; // Replace with the actual playlist ID
+  const playlistId = "37i9dQZF1DWYkaDif7Ztbp"; // Replace with the actual playlist ID
 
   const [playlistInfo, setPlaylistInfo] = useState(null);
   const [currentAudio, setCurrentAudio] = useState(new Audio()); // Initialize with an empty Audio object
@@ -63,42 +63,43 @@ const Sportify = () => {
   };
 
   return (
-    <div className="flex h-auto overflow-hidden">
-      <nav className="bg-[#121212] text-white p-4 w-2/6 bg-fixed ">
-        <div className="flex items-center">
-          <h1>Home</h1>
-        </div>
-      </nav>
-      <main className="p-4 bg-red-400 overflow-x-scroll ">
+    <body className="bg-[#000000] ">
+    <div className="flex h-auto">
+  <nav className="bg-[#121212] text-white p-4 w-2/6 hidden md:hidden lg:block sm:hidden ">
+    <div className="flex items-center">
+      <h1>Home</h1>
+    </div>
+  </nav>
+      <main className="p-4 bg-[#121212] ">
 
 
         {playlistInfo && (
-          <div className="">
-            <header>
-              <nav className=" fixed z-20 overflow-y-auto bg-[#573C07] w-[100%] m-0">
-
+          <div className="bg-[#121212]">
+              <nav className=" bg-[#121212] text-white w-[100%] h-20 rounded  sticky top-0 z-50 overflow-y-auto">
+              hyujkl
                 <h1 className="text-2xl font-bold mb-4">Sportify</h1>
               </nav>
-            </header>
+            
+
 
             <h3 className="text-xl font-bold mt-4 mb-2">Tracks:{playlistInfo.tracks.total}</h3>
-            <div className="grid grid-cols-10 gap-4 w-[3000px] overflow-x-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-5 overflow-x-auto">
               {playlistInfo.tracks.items.map((track, i) => (
-                <div key={i} className="bg-white h-auto p-4 rounded shadow-md transition duration-300 transform hover:scale-105 hover:bg-slate-300 ">
+                <div key={i} className="bg-[#181818] text-white  p-4 pt-0 rounded shadow-md  hover:bg-[#282828]">
                   <img
                     src={track.track.album.images[0].url}
                     alt={track.track.album.name}
-                    className="w-full h-32  mb-4 rounded"
+                    className="w-full h-32 object-cover mb-8 rounded"
                   />
-                  <p className="text-lg font-semibold">{track.track.name}</p>
-                  <p className="text-sm text-gray-600">
+                  <h1 className="text-lg font-semibold">{track.track.name}</h1>
+                  <p className="text-sm text-white font-bold">
                     {track.track.artists.map((artist) => artist.name).join(', ')}
                   </p>
-                  <p className="text-sm text-gray-600">Album: {track.track.album.name}</p>
-                  <p className="text-sm text-gray-600">Duration: {track.track.duration_ms} ms</p>
+                  <p className="text-sm text-[#afaaaa] font-bold">Album: {track.track.album.name}</p>
+                  <p className="text-sm text-[#afaaaa] font-bold">Duration: {track.track.duration_ms} ms</p>
                   {track.track.preview_url && (
                     <button
-                      className="bg-green-700 text-white p-2 rounded-full mt-2 flex items-center justify-center"
+                      className="bg-green-700 text-[#4A4A4A] p-2 rounded-full mt-2 flex items-center justify-center"
                       onClick={() => playAudio(track.track.preview_url)}
                     >
                       <svg
@@ -123,16 +124,15 @@ const Sportify = () => {
                 </div>
               ))}
             </div>
-
-            {/* Single audio element for all tracks */}
-            <div className="bg-[#121212] h-20 flex justify-evenly">
-
-            <audio className="w-[50%]  " controls ref={(audio) => setCurrentAudio(audio)}></audio>
-            </div>
           </div>
         )}
       </main>
     </div>
+            <footer className="bg-[#000000] flex justify-evenly z-auto sticky bottom-0 z-50 overflow-y-auto">
+
+            <audio controls ref={(audio) => setCurrentAudio(audio)}></audio>
+            </footer>
+    </body>
   );
 };
 
