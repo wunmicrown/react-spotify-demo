@@ -95,9 +95,17 @@ const Sportify = () => {
 
           {playlistInfo && (
             <div className="bg-[#121212]">
-              <nav className=" bg-[#121212] text-white w-[100%] h-20 rounded  sticky top-0 z-50 overflow-y-auto">
-
-                <h1 className="text-2xl font-bold mb-4">Sportify</h1>
+              <nav className=" bg-[#202020] text-white w-[100%] h-18  sticky top-0 z-50 overflow-y-auto flex justify-between">
+                <div className="flex ">
+                <img src={searchIcon} alt="" />
+                <img src={searchIcon} alt="" />
+                </div>
+                <div className="flex gap-10 mx-10">
+                <button className="text-black font-bold transition duration-300 transform hover:scale-110 hover:bg-[#e3dede] bg-white rounded-2xl mt-3 mb-3 p-2">Explore Premium</button>
+                <button className="text-white font-bold transition duration-300 transform hover:scale-110  bg-[#0F0F0F] rounded-2xl mt-3 mb-3 p-2">Install App</button>
+                <img src={searchIcon} alt="" />
+                <img src={searchIcon} alt="" />
+                </div>
               </nav>
 
 
@@ -105,7 +113,7 @@ const Sportify = () => {
               <h3 className="text-xl font-bold mt-4 mb-2">Tracks:{playlistInfo.tracks.total}</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-5 overflow-x-auto">
                 {playlistInfo.tracks.items.map((track, i) => (
-                  <div key={i} className="bg-[#181818] text-white  p-4 pt-0 rounded shadow-md  hover:bg-[#282828]">
+                  <div key={i} className="bg-[#181818] text-white cursor-pointer p-4 pt-0 rounded shadow-md  hover:bg-[#282828]">
                     <img
                       src={track.track.album.images[0].url}
                       alt={track.track.album.name}
