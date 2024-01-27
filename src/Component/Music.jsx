@@ -3,6 +3,10 @@ import axios from "axios";
 import homeIcon from '../assets/image-folder/home-icon.png';
 import searchIcon from '../assets/image-folder/search-icon.png';
 import library from '../assets/image-folder/libary-icon.png';
+import next from '../assets/image-folder/next-icon.png';
+import back from '../assets/image-folder/back-icon.png';
+import notification from '../assets/image-folder/nofication-icon.png';
+import gmail from '../assets/image-folder/gmail-icon.png';
 
 
 const Sportify = () => {
@@ -97,14 +101,14 @@ const Sportify = () => {
             <div className="bg-[#121212]">
               <nav className=" bg-[#202020] text-white w-[100%] h-18  sticky top-0 z-50 overflow-y-auto flex justify-between">
                 <div className="flex ">
-                <img src={searchIcon} alt="" />
-                <img src={searchIcon} alt="" />
+                <img src={next} alt="" />
+                <img src={back} alt="" />
                 </div>
                 <div className="flex gap-10 mx-10">
                 <button className="text-black font-bold transition duration-300 transform hover:scale-110 hover:bg-[#e3dede] bg-white rounded-2xl mt-3 mb-3 p-2">Explore Premium</button>
                 <button className="text-white font-bold transition duration-300 transform hover:scale-110  bg-[#0F0F0F] rounded-2xl mt-3 mb-3 p-2">Install App</button>
-                <img src={searchIcon} alt="" />
-                <img src={searchIcon} alt="" />
+                <img className="" src={notification} alt="" />
+                <img src={gmail} alt="" />
                 </div>
               </nav>
 
