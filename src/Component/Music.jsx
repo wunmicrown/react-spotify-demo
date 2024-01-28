@@ -10,10 +10,12 @@ import gmail from '../assets/image-folder/gmail-icon.png';
 
 
 const Sportify = () => {
-  const endPoint = "https://accounts.spotify.com/api/token";
-  const clientId = "baa903f4c65b411e9bb91c10263b1110";
-  const clientSecret = "9cf614bb1332457ca8cae720ad387b11";
-  const playlistId = "37i9dQZF1DWYkaDif7Ztbp"; // Replace with the actual playlist ID
+  
+  const endPoint = import.meta.env.VITE_APP_SPOTIFY_ENDPOINT;
+  const clientId = import.meta.env.VITE_APP_SPOTIFY_CLIENTID;
+  const clientSecret =import.meta.env.VITE_APP_SPOTIFY_CLIENTSECREAT;
+  // Replace with the actual playlist ID
+  const playlistId = import.meta.env.VITE_APP_SPOTIFY_PLAYLISTID;
 
   const [playlistInfo, setPlaylistInfo] = useState(null);
   const [currentAudio, setCurrentAudio] = useState(new Audio()); // Initialize with an empty Audio object
@@ -46,7 +48,7 @@ const Sportify = () => {
           .then((playlistResponse) => {
             // Handle the playlist response
             setPlaylistInfo(playlistResponse.data);
-            console.log(playlistResponse.data);
+            // console.log(playlistResponse.data);
           })
           .catch((playlistError) => {
             // Handle playlist errors
@@ -70,7 +72,7 @@ const Sportify = () => {
   };
 
   return (
-    <body className="bg-[#000000] ">
+    <div className="bg-[#000000] ">
       <div className="flex h-auto">
         <nav className="bg-[#121212] fixed h-full  text-white p-4 w-52 hidden md:hidden lg:block sm:hidden ">
           <div className=" mt-6 h-48 rounded">
@@ -99,7 +101,7 @@ const Sportify = () => {
 
           {playlistInfo && (
             <div className="bg-[#121212]">
-              <nav className=" bg-[#202020] text-white w-[100%] h-18  sticky top-0 z-50 overflow-y-auto flex justify-between">
+              <nav className=" bg-[#202020] text-white w-full h-18 sticky top-0 z-50 overflow-y-auto flex justify-between">
                 <div className="flex ">
                 <img src={next} alt="" />
                 <img src={back} alt="" />
@@ -142,9 +144,9 @@ const Sportify = () => {
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="3"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="3"
                             d="M5 3l14 9L5 21V3z"
 
                           ></path>
@@ -160,11 +162,11 @@ const Sportify = () => {
           )}
         </main>
       </div>
-      <footer className="bg-[#000000] flex justify-evenly z-auto sticky bottom-0 z-50 overflow-y-auto">
+      <footer className="bg-[#000000] flex justify-evenly sticky bottom-0 z-10 overflow-y-auto">
 
         <audio className=" w-3/5  mt-5" controls ref={(audio) => setCurrentAudio(audio)}></audio>
       </footer>
-    </body>
+    </div>
   );
 };
 
