@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../assets/Styles/Login.css'
+import '../Component/styles/Login.css'
 const Login = () => {
   const [name, setName] = useState("SQI template");
   const [allUsers, setAllUsers] = useState([]);
